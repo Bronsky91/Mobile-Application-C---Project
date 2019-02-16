@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+             NavigationPage.HasNavigationBar="false"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:C971"
+             x:Class="C971.MainPage">
+    <StackLayout>
+        <StackLayout VerticalOptions="Start" Orientation="Horizontal" HorizontalOptions="Center">
+            <!-- Place new controls here -->
+            <Label Text="University Name" HorizontalOptions="CenterAndExpand"
+            />
+        </StackLayout>
+        <StackLayout VerticalOptions="CenterAndExpand" >
+            <!-- Place new controls here -->
+            <Button Text="Term Number" HorizontalOptions="Center" Margin="0, 20, 0, 20" Clicked="Button_Clicked"
+            />
+            <Button Text="Term Number" HorizontalOptions="Center" Margin="0, 20, 0, 20"
+            />
+            <Button Text="Term Number" HorizontalOptions="Center" Margin="0, 20, 0, 20"
+            />
+        </StackLayout>
+        <StackLayout>
+            <Button Text="Add Term" HorizontalOptions="Center" Margin="0, 20, 0, 20"
+            />
+        </StackLayout>
+    </StackLayout>
+    
+
+</ContentPage>

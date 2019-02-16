@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage Title="Course Title - Number"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="C971.CoursePage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam a leo sit amet ex scelerisque fermentum. Praesent eget vehicula nulla, eu vulputate est. Nullam consequat volutpat tellus, id aliquam magna. Vivamus auctor fermentum lobortis. Curabitur vel finibus erat. Suspendisse cursus rutrum sapien id malesuada.
+                   " HorizontalOptions="Center" VerticalOptions="Start" Margin="10, 0, 10, 0"/>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                <Button Text="edit"/>
+                <Button Text="drop"/>
+            </StackLayout>
+            <Button Text="Assessments Required >" HorizontalOptions="Center" VerticalOptions="End" Clicked="Button_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
