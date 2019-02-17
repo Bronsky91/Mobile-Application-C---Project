@@ -12,9 +12,10 @@ namespace C971
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class TermPage : ContentPage
 	{
-		public TermPage ()
+		public TermPage (string termNumber)
 		{
 			InitializeComponent ();
+            Title = termNumber;
 		}
 
         async void Button_Clicked(object sender, EventArgs e)

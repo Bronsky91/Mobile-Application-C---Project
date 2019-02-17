@@ -6,7 +6,7 @@
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam a leo sit amet ex scelerisque fermentum. Praesent eget vehicula nulla, eu vulputate est. Nullam consequat volutpat tellus, id aliquam magna. Vivamus auctor fermentum lobortis. Curabitur vel finibus erat. Suspendisse cursus rutrum sapien id malesuada.
-                   " HorizontalOptions="Center" VerticalOptions="Start" Margin="10, 0, 10, 0"/>
+                   " HorizontalOptions="Center" VerticalOptions="Start" Margin="40, 0, 30, 0"/>
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
                 <Button Text="edit"/>
                 <Button Text="drop"/>
