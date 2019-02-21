@@ -50,10 +50,11 @@ namespace C971
             await Navigation.PushModalAsync(new EditTerm(_currentTerm));
         }
 
-        private void Add_Course(object sender, EventArgs e)
+        private async void Add_Course(object sender, EventArgs e)
         {
-            Course newCourse = new Course();
-            newCourse.TermTitle = _currentTerm.Title;
+
+            await Navigation.PushModalAsync(new AddCourse(_currentTerm));
+            //newCourse.TermTitle = _currentTerm.Title;
 
         }
         
