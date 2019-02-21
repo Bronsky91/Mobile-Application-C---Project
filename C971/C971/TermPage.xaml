@@ -12,9 +12,9 @@
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell IsEnabled="True">
-                                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                                    <Label Text="Course " HorizontalOptions="Center"/>
-                                    <Label Text="{Binding Number}" HorizontalOptions="Center"></Label>
+                                <StackLayout Orientation="Vertical">
+                                    <Label Text="{Binding CourseName}" />
+                                    <Label Text="{Binding Status}"/>
                                 </StackLayout>
                             </ViewCell>
                         </DataTemplate>
@@ -23,8 +23,7 @@
             </StackLayout>
             <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
                 <Button Text="Edit Term" Clicked="Edit_Term" Margin="0, 20, 0, 20"/>
-                <Button Text="Add Course" HorizontalOptions="Center" Margin="0, 20, 0, 20" Clicked="Add_Course"
-            />
+                <Button Text="Add Course" HorizontalOptions="Center" Margin="0, 20, 0, 20" Clicked="Add_Course"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

@@ -34,7 +34,7 @@ namespace C971
             newCourse.CourseName = CourseName.Text;
             newCourse.StartDate = startDate.Date;
             newCourse.EndDate = endDate.Date;
-            newCourse.Status = CourseStatus.On ? 1 : 0;
+            newCourse.Status = CourseStatus.On ? "Enrolled" : "Not Enrolled";
             newCourse.InstructorName = InstructorName.Text;
             newCourse.InstructorPhone = InstructorPhone.Text;
             newCourse.InstructorEmail = InstructorEmail.Text;

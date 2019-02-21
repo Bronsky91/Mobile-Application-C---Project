@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,6 +19,7 @@ namespace C971
         private SQLiteAsyncConnection _connection;
         private ObservableCollection<Course> _courseList;
         private Term _currentTerm;
+        
 
         public TermPage (Term term)
 		{
@@ -32,17 +34,19 @@ namespace C971
         {
             TermDetailsStart.Text = $"Term Start: {_currentTerm.StartDate.ToString("MM/dd/yyyy")}";
             TermDetailsEnd.Text = $"Term End: { _currentTerm.EndDate.ToString("MM/dd/yyyy")}";
+
             await _connection.CreateTableAsync<Course>();
             var courseList = await _connection.Table<Course>().ToListAsync();
             _courseList = new ObservableCollection<Course>(courseList);
             courseListView.ItemsSource = _courseList;
-
+            
             base.OnAppearing();
         }
-
-        async void Course_Tapped(object sender, EventArgs e)
+        
+        private async void Course_Tapped(object sender, ItemTappedEventArgs e)
         {
-            await Navigation.PushAsync(new CoursePage());
+            Course course = (Course)e.Item;
+            await Navigation.PushAsync(new CoursePage(course));
         }
 
         async void Edit_Term(object sender, EventArgs e)

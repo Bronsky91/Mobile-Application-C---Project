@@ -27,7 +27,7 @@ namespace C971
         public int Id { get; set; }
         public string TermTitle { get; set; }
         public string CourseName { get; set; }
-        public int Status { get; set; }
+        public string Status { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public string InstructorName { get; set; }

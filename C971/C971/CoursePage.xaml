@@ -1,17 +1,55 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage Title="Course Title - Number"
+<ContentPage
              xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="C971.CoursePage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam a leo sit amet ex scelerisque fermentum. Praesent eget vehicula nulla, eu vulputate est. Nullam consequat volutpat tellus, id aliquam magna. Vivamus auctor fermentum lobortis. Curabitur vel finibus erat. Suspendisse cursus rutrum sapien id malesuada.
-                   " HorizontalOptions="Center" VerticalOptions="Start" Margin="40, 0, 30, 0"/>
+            <TableView>
+                <TableSection  x:Name="CourseTable">
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="13, 0">
+                            <Label Text="Status:" />
+                            <Label x:Name="Status"/>
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="13, 0">
+                            <Label Text="Start Date:" />
+                            <Label x:Name="StartDate"/>
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="13, 0">
+                            <Label Text="End Date:" />
+                            <Label x:Name="EndDate"/>
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="13, 0">
+                            <Label Text="Instructor Name:" />
+                            <Label x:Name="InstructorName"/>
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="13, 0">
+                            <Label Text="Instructor Phone:" />
+                            <Label x:Name="InstructorPhone"/>
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="13, 0">
+                            <Label Text="Instructor Email:" />
+                            <Label x:Name="InstructorEmail"/>
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+            </TableView>
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
-                <Button Text="edit"/>
-                <Button Text="drop"/>
+                <Button Text="edit" Clicked="Edit_Clicked"/>
+                <Button Text="drop" Clicked="Delete_Clicked"/>
             </StackLayout>
-            <Button Text="Assessments Required >" HorizontalOptions="Center" VerticalOptions="End" Clicked="Button_Clicked"/>
+            <Button Text="Assessments Required >" HorizontalOptions="Center" VerticalOptions="End" Clicked="Assements_Button"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
