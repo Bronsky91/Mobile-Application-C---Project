@@ -23,6 +23,7 @@
                     <EntryCell Label="Instructor Name:" x:Name="InstructorName"/>
                     <EntryCell Label="Instructor Phone" x:Name="InstructorPhone"/>
                     <EntryCell Label="Instructor Email" x:Name="InstructorEmail"/>
+                    <EntryCell x:Name="Notes" Label="Notes:"/>
                 </TableSection>
             </TableView>
             <Button Text="Edit" Clicked="Edit_Clicked"/>

@@ -28,7 +28,6 @@ namespace C971
 
         protected override void OnAppearing()
         {
-
             Title = _currentCourse.CourseName;
             Status.Text = _currentCourse.Status;
             StartDate.Text = _currentCourse.StartDate.ToString("MM/dd/yyyy");
@@ -36,6 +35,7 @@ namespace C971
             InstructorName.Text = _currentCourse.InstructorName;
             InstructorPhone.Text = _currentCourse.InstructorPhone;
             InstructorEmail.Text = _currentCourse.InstructorEmail;
+            Notes.Text = _currentCourse.Notes;
 
             base.OnAppearing();
         }

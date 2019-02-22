@@ -34,6 +34,7 @@ namespace C971
             InstructorName.Text = _currentCourse.InstructorName;
             InstructorPhone.Text = _currentCourse.InstructorPhone;
             InstructorEmail.Text = _currentCourse.InstructorEmail;
+            Notes.Text = _currentCourse.Notes;
 
             base.OnAppearing();
         }
@@ -47,6 +48,7 @@ namespace C971
             _currentCourse.InstructorName = InstructorName.Text;
             _currentCourse.InstructorPhone = InstructorPhone.Text;
             _currentCourse.InstructorEmail = InstructorEmail.Text;
+            _currentCourse.Notes = Notes.Text;
 
             await _connection.UpdateAsync(_currentCourse);
 

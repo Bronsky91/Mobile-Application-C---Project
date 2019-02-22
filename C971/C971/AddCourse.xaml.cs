@@ -38,6 +38,7 @@ namespace C971
             newCourse.InstructorName = InstructorName.Text;
             newCourse.InstructorPhone = InstructorPhone.Text;
             newCourse.InstructorEmail = InstructorEmail.Text;
+            newCourse.Notes = Notes.Text;
 
             await _connection.InsertAsync(newCourse);
             

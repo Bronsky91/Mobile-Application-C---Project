@@ -43,6 +43,12 @@
                             <Label x:Name="InstructorEmail"/>
                         </StackLayout>
                     </ViewCell>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="13, 0">
+                            <Label Text="Notes:" />
+                            <Label x:Name="Notes"/>
+                        </StackLayout>
+                    </ViewCell>
                 </TableSection>
             </TableView>
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">

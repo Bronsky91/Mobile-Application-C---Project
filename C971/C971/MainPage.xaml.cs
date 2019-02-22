@@ -33,6 +33,7 @@ namespace C971
         public string InstructorName { get; set; }
         public string InstructorPhone { get; set; }
         public string InstructorEmail { get; set; }
+        public string Notes { get; set; }
     }
 
     public partial class MainPage : ContentPage
