@@ -7,7 +7,19 @@
             <TableView>
                 <TableSection Title="Edit Course">
                     <EntryCell Label="Course Name:" x:Name="CourseName"/>
-                    <SwitchCell Text="Enroll Status" On="True" x:Name="CourseStatus"/>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="13, 0" >
+                            <Label Text="Course Status:" VerticalOptions="Center"/>
+                            <Picker x:Name="CourseStatus" Title="Choose Status">
+                                <Picker.Items>
+                                    <x:String>In-Progress</x:String>
+                                    <x:String>Completed</x:String>
+                                    <x:String>Dropped</x:String>
+                                    <x:String>Plan to Take</x:String>
+                                </Picker.Items>
+                            </Picker>
+                        </StackLayout>
+                    </ViewCell>
                     <ViewCell>
                         <StackLayout Orientation="Horizontal" Padding="13, 0">
                             <Label Text="Start Date"/>

@@ -28,13 +28,14 @@ namespace C971
             await _connection.CreateTableAsync<Course>();
 
             CourseName.Text = _currentCourse.CourseName;
-            CourseStatus.On = _currentCourse.Status == "Enrolled" ? true : false;
+            CourseStatus.SelectedItem = _currentCourse.Status;
             StartDate.Date = _currentCourse.StartDate;
             EndDate.Date = _currentCourse.EndDate;
             InstructorName.Text = _currentCourse.InstructorName;
             InstructorPhone.Text = _currentCourse.InstructorPhone;
             InstructorEmail.Text = _currentCourse.InstructorEmail;
             Notes.Text = _currentCourse.Notes;
+            
 
             base.OnAppearing();
         }
@@ -44,15 +45,27 @@ namespace C971
             _currentCourse.CourseName = CourseName.Text;
             _currentCourse.StartDate = StartDate.Date;
             _currentCourse.EndDate = EndDate.Date;
-            _currentCourse.Status = CourseStatus.On ? "Enrolled" : "Not Enrolled";
+            _currentCourse.Status = (string)CourseStatus.SelectedItem;
             _currentCourse.InstructorName = InstructorName.Text;
             _currentCourse.InstructorPhone = InstructorPhone.Text;
             _currentCourse.InstructorEmail = InstructorEmail.Text;
             _currentCourse.Notes = Notes.Text;
+            
+            if(FieldValidation.nullCheck(InstructorName.Text) &&
+               FieldValidation.nullCheck(InstructorPhone.Text) &&
+               FieldValidation.nullCheck(CourseName.Text))
+            {
+                if (FieldValidation.emailCheck(InstructorEmail.Text))
+                {
+                    await _connection.UpdateAsync(_currentCourse);
 
-            await _connection.UpdateAsync(_currentCourse);
-
-            await Navigation.PopModalAsync();
+                    await Navigation.PopModalAsync();
+                }
+               else
+                    await DisplayAlert("Action Required", "Please make sure your email is valid before submitting", "Ok");
+            }
+            else
+                await DisplayAlert("Action Required", "Please make sure no fields are blank before submitting", "Ok");
         }
     }
 }

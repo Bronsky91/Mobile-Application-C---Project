@@ -25,7 +25,7 @@ namespace C971
     {
         [PrimaryKey, AutoIncrement, Column("_id")]
         public int Id { get; set; }
-        public string TermTitle { get; set; }
+        public int Term { get; set; }
         public string CourseName { get; set; }
         public string Status { get; set; }
         public DateTime StartDate { get; set; }

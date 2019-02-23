@@ -36,7 +36,8 @@ namespace C971
             TermDetailsEnd.Text = $"Term End: { _currentTerm.EndDate.ToString("MM/dd/yyyy")}";
 
             await _connection.CreateTableAsync<Course>();
-            var courseList = await _connection.Table<Course>().ToListAsync();
+            // var courseList = await _connection.Table<Course>().ToListAsync();
+            var courseList = await _connection.QueryAsync<Course>($"SELECT * FROM Courses WHERE Term = '{_currentTerm.Id}'");
             _courseList = new ObservableCollection<Course>(courseList);
             courseListView.ItemsSource = _courseList;
             

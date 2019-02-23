@@ -13,11 +13,12 @@ namespace C971
 	public partial class AddCourse : ContentPage
 	{
         private SQLiteAsyncConnection _connection;
+        private Term _currentTerm;
 
         public AddCourse (Term currentTerm)
 		{
 			InitializeComponent ();
-            
+            _currentTerm = currentTerm;
             _connection = DependencyService.Get<ISQLiteDb>().GetConnection();
         }
 
@@ -34,15 +35,30 @@ namespace C971
             newCourse.CourseName = CourseName.Text;
             newCourse.StartDate = startDate.Date;
             newCourse.EndDate = endDate.Date;
-            newCourse.Status = CourseStatus.On ? "Enrolled" : "Not Enrolled";
+            newCourse.Status = (string)CourseStatus.SelectedItem;
             newCourse.InstructorName = InstructorName.Text;
             newCourse.InstructorPhone = InstructorPhone.Text;
             newCourse.InstructorEmail = InstructorEmail.Text;
             newCourse.Notes = Notes.Text;
+            newCourse.Term = _currentTerm.Id;
 
-            await _connection.InsertAsync(newCourse);
+
+            if (FieldValidation.nullCheck(InstructorName.Text) &&
+               FieldValidation.nullCheck(InstructorPhone.Text) &&
+               FieldValidation.nullCheck(CourseName.Text))
+            {
+                if (FieldValidation.emailCheck(InstructorEmail.Text))
+                {
+                    await _connection.InsertAsync(newCourse);
+
+                    await Navigation.PopModalAsync();
+                }
+                else
+                    await DisplayAlert("Action Required", "Please make sure your email is valid before submitting", "Ok");
+            } 
+            else
+                await DisplayAlert("Action Required", "Please make sure no fields are blank before submitting", "Ok");
             
-            await Navigation.PopModalAsync();
         }
     }
 }
