@@ -34,7 +34,22 @@ namespace C971
         public string InstructorPhone { get; set; }
         public string InstructorEmail { get; set; }
         public string Notes { get; set; }
+        public int NotificationEnabled { get; set; }
     }
+
+    [Table("Assessments")]
+    public class Assessment
+    {
+        [PrimaryKey, AutoIncrement, Column("_id")]
+        public int Id { get; set; }
+        public string Title { get; set; }
+        public DateTime StartDate { get; set; }
+        public DateTime EndDate { get; set; }
+        public string Type { get; set; }
+        public int Course { get; set; }
+        public int NotificationEnabled { get; set; }
+    }
+
 
     public partial class MainPage : ContentPage
     {

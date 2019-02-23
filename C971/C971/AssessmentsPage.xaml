@@ -4,11 +4,22 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="C971.AssessmentsPage">
     <ContentPage.Content>
-        <StackLayout VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand">
-            <Button Text="Assessment Name - Objective"/>
-            <Button Text="Assessment Name - Performance"/>
-            <Button Text="Add Assessment" VerticalOptions="End"/>
+        <StackLayout>
+            <StackLayout VerticalOptions="FillAndExpand" x:Name="Assessments">
+                <ListView x:Name="assessmentsListView" VerticalOptions="Center">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell IsEnabled="True">
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                                    <Label Text="{Binding Type}" VerticalOptions="Center"/>
+                                    <Label Text="Assessment" VerticalOptions="Center"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+            <Button Text="Add Assessment" VerticalOptions="End" Clicked="Add_Assessment"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

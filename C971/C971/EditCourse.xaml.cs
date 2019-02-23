@@ -50,8 +50,10 @@ namespace C971
             _currentCourse.InstructorPhone = InstructorPhone.Text;
             _currentCourse.InstructorEmail = InstructorEmail.Text;
             _currentCourse.Notes = Notes.Text;
-            
-            if(FieldValidation.nullCheck(InstructorName.Text) &&
+            _currentCourse.NotificationEnabled = EnableNotifications.On == true ? 1 : 0;
+
+
+            if (FieldValidation.nullCheck(InstructorName.Text) &&
                FieldValidation.nullCheck(InstructorPhone.Text) &&
                FieldValidation.nullCheck(CourseName.Text))
             {

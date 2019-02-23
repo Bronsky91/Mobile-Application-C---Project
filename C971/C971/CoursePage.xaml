@@ -45,6 +45,12 @@
                     </ViewCell>
                     <ViewCell>
                         <StackLayout Orientation="Horizontal" Padding="13, 0">
+                            <Label Text="Notifications Enabled:" />
+                            <Label x:Name="NotificationsEnabled"/>
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="13, 0">
                             <Label Text="Notes:" />
                             <Label x:Name="Notes"/>
                         </StackLayout>

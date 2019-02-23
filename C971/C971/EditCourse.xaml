@@ -35,6 +35,7 @@
                     <EntryCell Label="Instructor Name:" x:Name="InstructorName"/>
                     <EntryCell Label="Instructor Phone" x:Name="InstructorPhone"/>
                     <EntryCell Label="Instructor Email" x:Name="InstructorEmail"/>
+                    <SwitchCell Text="Enable Notifications" x:Name="EnableNotifications"/>
                     <EntryCell x:Name="Notes" Label="Notes:"/>
                 </TableSection>
             </TableView>

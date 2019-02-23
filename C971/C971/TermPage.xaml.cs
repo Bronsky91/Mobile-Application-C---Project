@@ -25,8 +25,8 @@ namespace C971
 		{
 			InitializeComponent ();
             Title = term.Title;
-            _connection = DependencyService.Get<ISQLiteDb>().GetConnection();
             _currentTerm = term;
+            _connection = DependencyService.Get<ISQLiteDb>().GetConnection();
             courseListView.ItemTapped += new EventHandler<ItemTappedEventArgs>(Course_Tapped);
         }
 

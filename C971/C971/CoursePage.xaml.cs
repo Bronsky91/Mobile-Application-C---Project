@@ -36,13 +36,14 @@ namespace C971
             InstructorPhone.Text = _currentCourse.InstructorPhone;
             InstructorEmail.Text = _currentCourse.InstructorEmail;
             Notes.Text = _currentCourse.Notes;
+            NotificationsEnabled.Text = _currentCourse.NotificationEnabled == 1 ? "Yes" : "No";
 
             base.OnAppearing();
         }
 
         async void Assements_Button(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new AssessmentsPage());
+            await Navigation.PushAsync(new AssessmentsPage(_currentCourse));
         }
 
         private async void Edit_Clicked(object sender, EventArgs e)
