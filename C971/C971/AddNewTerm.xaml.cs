@@ -31,10 +31,22 @@ namespace C971
             newTerm.StartDate = startDate.Date;
             newTerm.EndDate = endDate.Date;
 
-            await _connection.InsertAsync(newTerm);
+            if(newTerm.StartDate < newTerm.EndDate)
+            {
+                if (FieldValidation.nullCheck(newTerm.Title))
+                {
+                    await _connection.InsertAsync(newTerm);
 
-            _mainPage._termList.Add(newTerm);
-            await Navigation.PopModalAsync();
+                    _mainPage._termList.Add(newTerm);
+                    await Navigation.PopModalAsync();
+                }
+                else
+                    await DisplayAlert("Action Required", "Please make sure the Term Title is not blank", "Ok");
+            }
+            else
+                await DisplayAlert("Action Required", "Please make sure the start date is before the end date", "Ok");
+
+
         }
     }
 }

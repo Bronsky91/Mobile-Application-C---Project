@@ -25,6 +25,9 @@
                 <Button Text="Edit Term" Clicked="Edit_Term" Margin="0, 20, 0, 20"/>
                 <Button Text="Add Course" HorizontalOptions="Center" Margin="0, 20, 0, 20" Clicked="Add_Course"/>
             </StackLayout>
+            <StackLayout>
+                    <Button Clicked="Delete_Term" Text="Drop Term" FontSize="Micro" HeightRequest="40"/>
+                </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -38,9 +38,19 @@ namespace C971
             _currentTerm.StartDate = startDate.Date;
             _currentTerm.EndDate = endDate.Date;
 
-            await _connection.UpdateAsync(_currentTerm);
-            
-            await Navigation.PopModalAsync();
+            if (_currentTerm.StartDate < _currentTerm.EndDate)
+            {
+                if (FieldValidation.nullCheck(_currentTerm.Title))
+                {
+                    await _connection.UpdateAsync(_currentTerm);
+
+                    await Navigation.PopModalAsync();
+                }
+                else
+                    await DisplayAlert("Action Required", "Please make sure the Term Title is not blank", "Ok");
+            }
+            else
+                await DisplayAlert("Action Required", "Please make sure the start date is before the end date", "Ok");
         }
     }
 }

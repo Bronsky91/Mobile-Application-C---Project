@@ -59,9 +59,19 @@ namespace C971
         {
 
             await Navigation.PushModalAsync(new AddCourse(_currentTerm));
-            //newCourse.TermTitle = _currentTerm.Title;
 
         }
-        
+
+        private async void Delete_Term(object sender, EventArgs e)
+        {
+            var answer = await DisplayAlert("Warning", "Do you want to drop this term?", "Yes", "No");
+            if (answer)
+            {
+                await _connection.DeleteAsync(_currentTerm);
+                await Navigation.PopToRootAsync();
+            }
+            
+        }
+
     }
 }

@@ -28,7 +28,6 @@
         </StackLayout>
         <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
             <Button Text="Add Term" HorizontalOptions="Center" Margin="0, 20, 0, 20" Clicked="Add_Term"/>
-            <Button Text="Remove Term" HorizontalOptions="Center" Margin="0, 20, 0, 20" Clicked="Delete_Term"/>
         </StackLayout>
     </StackLayout>
     

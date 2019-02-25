@@ -59,9 +59,14 @@ namespace C971
             {
                 if (FieldValidation.emailCheck(InstructorEmail.Text))
                 {
-                    await _connection.UpdateAsync(_currentCourse);
+                    if(_currentCourse.StartDate < _currentCourse.EndDate)
+                    {
+                        await _connection.UpdateAsync(_currentCourse);
 
-                    await Navigation.PopModalAsync();
+                        await Navigation.PopModalAsync();
+                    }
+                    else
+                        await DisplayAlert("Action Required", "Please make sure the start date is before the end date", "Ok");
                 }
                else
                     await DisplayAlert("Action Required", "Please make sure your email is valid before submitting", "Ok");

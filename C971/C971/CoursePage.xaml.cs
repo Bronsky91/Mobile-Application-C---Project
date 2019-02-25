@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SQLite;
+using Xamarin.Essentials;
+
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -60,6 +62,15 @@ namespace C971
                 await Navigation.PopAsync();
             }
            
+        }
+
+        private async void ShareButton_Clicked(object sender, EventArgs e)
+        {
+            await Share.RequestAsync(new ShareTextRequest
+            {
+                Text = Notes.Text,
+                Title = "Share your notes on the course"
+            });
         }
     }
 }
